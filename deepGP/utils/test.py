@@ -2,8 +2,8 @@ import torch
 import math
 from torch.utils.data import TensorDataset, DataLoader
 
-def test(model,test_x, test_y,batch_size = 1024):
-    test_dataset = TensorDataset(test_x, test_y)
+def test(model,test_x, test_y, test_gp_in, batch_size = 1024):
+    test_dataset = TensorDataset(test_x, test_y, test_gp_in)
     test_loader = DataLoader(test_dataset, batch_size = batch_size)
 
     model.eval()
